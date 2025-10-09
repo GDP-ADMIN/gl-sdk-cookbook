@@ -23,10 +23,10 @@ Welcome to the **GL SDK Cookbook** - your comprehensive collection of sample cod
 
 ```
 gl-sdk-cookbook/
-├── README.md
-├── glchat/           # GL Chat SDK examples
-├── glaip/            # GL AI Platform SDK examples
-└── gllm/             # GL Language Model SDK examples
+├── glaip/           # GL AI Platform SDK examples
+├── glchat/          # GL Chat SDK examples
+├── gllm/            # GL Language Model SDK examples
+└── README.md
 ```
 
 ## 📚 Support
