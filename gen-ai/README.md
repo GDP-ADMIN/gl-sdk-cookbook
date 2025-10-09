@@ -1,10 +1,11 @@
-# 🍳 Gen AI Cookbook
+# 🍳 Gen AI SDK Cookbook
 
-Welcome to the **Gen AI Cookbook** - your comprehensive collection of sample code and examples for working with the Gen AI SDK!
+Welcome to the **Gen AI SDK Cookbook** - your comprehensive collection of sample code and examples for working with the Gen AI SDK!
 
 ## ⚙️ Prerequisites
-
-_TBD_
+1. **OpenAI API key** - Please see https://platform.openai.com/api-keys on how to create one.
+2. **UV** - Please check https://docs.astral.sh/uv/ on how to install it.
+3. **Python 3.11+** - Can be [installed via UV](https://docs.astral.sh/uv/guides/install-python/).
 
 ## 🚀 Getting Started
 

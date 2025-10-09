@@ -1,34 +1,72 @@
 ## ⚙️ Prerequisites
 
-Please refer to prerequisites [here](https://github.com/GDP-ADMIN/gl-sdk-cookbook/blob/main/README.md).
+Please refer to prerequisites [here](../../../README.md).
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+1. **Clone the repository & open the directory**
 
    ```bash
    git clone https://github.com/GDP-ADMIN/gl-sdk-cookbook.git
-   cd gl-sdk-cookbook/glchat/examples/hello-world
+   cd gl-sdk-cookbook/gen-ai/examples/lm_request_processor/lm_request_processor_structured_output
    ```
 
-2. **Run the example**
+2. **Prepare environment variable**  
+    Create a file called `.env`, then set the OpenAI API key as an environment variable.
+    ```env
+    OPENAI_API_KEY="..."      
+    ```
+
+3. **Install dependency via UV**
+    ```bash
+    uv lock
+    uv sync
+    ```
+
+4. **Run the example**
 
    ```bash
-   uv run main.py
+   uv run with_json_output.py
+   uv run with_response_schema.py
    ```
 
-3. **Expected Output**
+5. **Expected Output**
 
-   You should see a response from the GLChat SDK, similar to:
+   You should see a response similar to the following:
 
+   ```log
+   Structured output:
+   {
+      "location": "Tokyo, Japan",
+      "activities": [
+         {
+               "type": "Sightseeing",
+               "activity_location": "Tokyo Tower",
+               "description": "Visit Tokyo Tower for a panoramic view of the city, especially beautiful at sunset and night."
+         },
+         {
+               "type": "Cultural Experience",
+               "activity_location": "Senso-ji Temple, Asakusa",
+               "description": "Explore the historic Senso-ji Temple and the surrounding traditional shopping street, Nakamise-dori."
+         },
+         {
+               "type": "Shopping",
+               "activity_location": "Shibuya",
+               "description": "Experience the famous Shibuya Crossing and shop at the trendy boutiques and department stores in the area."
+         },
+         {
+               "type": "Food",
+               "activity_location": "Tsukiji Outer Market",
+               "description": "Taste fresh sushi and seafood at the famous Tsukiji Outer Market."
+         },
+         {
+               "type": "Entertainment",
+               "activity_location": "Akihabara",
+               "description": "Discover the vibrant electronics and otaku culture district, with numerous shops, arcades, and themed cafes."
+         }
+      ]
+   }
    ```
-   data:{"status": "response", "message": "Hello", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781001, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello!", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781012, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781023, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781034, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can I", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781045, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can I assist", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781056, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can I assist you", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781070, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can I assist you today", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781081, "stream_message_only": false}
-   data:{"status": "response", "message": "Hello! How can I assist you today?", "conversation_id": null, "user_message_id": null, "assistant_message_id": null, "created_date": 1759807781092, "stream_message_only": false}
-   ```
+
+## 🚀 Reference
+These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/utilize-language-model-request-processor/produce-consistent-output-from-lm).
