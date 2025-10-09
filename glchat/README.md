@@ -18,4 +18,4 @@ You can use UV to [install Python](https://docs.astral.sh/uv/guides/install-pyth
 
 ## 🚀 Getting Started
 
-Check each subfolders in [examples](./examples/) folder for specific setup instructions and examples.
+Check each folder for specific setup instructions and examples.
