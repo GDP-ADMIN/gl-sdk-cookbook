@@ -11,10 +11,11 @@ Please refer to prerequisites [here](../../../README.md).
    cd gl-sdk-cookbook/gen-ai/examples/lm_request_processor/lm_request_processor_structured_output
    ```
 
-2. **Prepare environment variable**  
-    Create a file called `.env`, then set the OpenAI API key as an environment variable.
+2. **Set UV authentication**  
+   Since UV will need to be able to access our private registry to download the required packages, please also set the following environment variables:
     ```env
-    OPENAI_API_KEY="..."      
+    UV_INDEX_GEN_AI_INTERNAL_USERNAME=oauth2accesstoken
+    UV_INDEX_GEN_AI_INTERNAL_PASSWORD="$(gcloud auth print-access-token)"
     ```
 
 3. **Install dependency via UV**
@@ -23,14 +24,20 @@ Please refer to prerequisites [here](../../../README.md).
     uv sync
     ```
 
-4. **Run the example**
+4. **Prepare `.env` file**  
+    Create a file called `.env`, then set the OpenAI API key as an environment variable.
+    ```env
+    OPENAI_API_KEY="..."      
+    ```
+
+5. **Run the example**
 
    ```bash
    uv run with_json_output.py
    uv run with_response_schema.py
    ```
 
-5. **Expected Output**
+6. **Expected Output**
 
    You should see a response similar to the following:
 
