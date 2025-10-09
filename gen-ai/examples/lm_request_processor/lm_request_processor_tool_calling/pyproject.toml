@@ -1,10 +1,11 @@
 [project]
-name = "lm-request-processor-structured-output"
+name = "lm-request-processor-tool-calling"
 version = "0.0.0"
-description = "LM Request Processor structured output example"
+description = "LM Request Processor tool calling example"
 requires-python = ">=3.11,<3.14"
 readme = "README.md"
 dependencies = [
+    "gllm-core>=0.3.0,<0.4.0",
     "gllm-inference[openai]>=0.5.0,<0.6.0",
     "python-dotenv>=1.0.0,<2.0.0",
 ]
@@ -14,4 +15,5 @@ name = "gen-ai-internal"
 url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
 
 [tool.uv.sources]
+gllm-core = { index = "gen-ai-internal" }
 gllm-inference = { index = "gen-ai-internal" }
