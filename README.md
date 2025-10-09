@@ -14,7 +14,7 @@ Welcome to the **GL SDK Cookbook** - your comprehensive collection of sample cod
 2. **Navigate to the specific SDK folder**
 
    ```bash
-   cd glchat  # or glaip, gllm
+   cd glchat  # or glaip, gen-ai
    ```
 
 3. **Follow the README in each subfolder** for specific setup instructions and examples
@@ -23,9 +23,9 @@ Welcome to the **GL SDK Cookbook** - your comprehensive collection of sample cod
 
 ```
 gl-sdk-cookbook/
+├── gen-ai/          # Gen AI SDK examples
 ├── glaip/           # GL AI Platform SDK examples
 ├── glchat/          # GL Chat SDK examples
-├── gllm/            # GL Language Model SDK examples
 └── README.md
 ```
 
