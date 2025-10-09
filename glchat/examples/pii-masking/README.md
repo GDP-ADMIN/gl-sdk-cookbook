@@ -11,19 +11,13 @@ Please refer to prerequisites [here](../../README.md#️-prerequisites).
    cd gl-sdk-cookbook/glchat/examples/pii-masking
    ```
 
-2. **Install dependencies**
-
-   ```bash
-   uv sync
-   ```
-
-3. **Run the example**
+2. **Run the example**
 
    ```bash
    uv run main.py
    ```
 
-4. **Expected Output**
+3. **Expected Output**
 
    You should see a response from the GLChat SDK, similar to:
 
