@@ -8,7 +8,7 @@ Please refer to prerequisites [here](../../README.md#️-prerequisites).
 
    ```bash
    git clone https://github.com/GDP-ADMIN/gl-sdk-cookbook.git
-   cd glchat/examples/hello-world
+   cd gl-sdk-cookbook/glchat/examples/hello-world
    ```
 
 2. **Install dependencies**
