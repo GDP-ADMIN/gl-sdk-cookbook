@@ -14,5 +14,4 @@ name = "gen-ai-internal"
 url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
 
 [tool.uv.sources]
-gllm-core = { index = "gen-ai-internal" }
 gllm-inference = { index = "gen-ai-internal" }
