@@ -1,10 +1,14 @@
+## ⚙️ Prerequisites
+
+Please refer to prerequisites [here](../../README.md#️-prerequisites).
+
 ## 🚀 Getting Started
 
 1. **Clone the repository**
 
    ```bash
    git clone https://github.com/GDP-ADMIN/gl-sdk-cookbook.git
-   cd glchat/examples/pii-masking
+   cd gl-sdk-cookbook/glchat/examples/pii-masking
    ```
 
 2. **Install dependencies**
