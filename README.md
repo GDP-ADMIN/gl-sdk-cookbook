@@ -7,7 +7,7 @@ Welcome to the **GL SDK Cookbook** - your comprehensive collection of sample cod
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/gl-sdk-cookbook.git
+   git clone https://github.com/GDP-ADMIN/gl-sdk-cookbook.git
    cd gl-sdk-cookbook
    ```
 
@@ -19,7 +19,7 @@ Welcome to the **GL SDK Cookbook** - your comprehensive collection of sample cod
 
 3. **Follow the README in each subfolder** for specific setup instructions and examples
 
-## Repository Structure
+## 📂 Repository Structure
 
 ```
 gl-sdk-cookbook/
@@ -29,8 +29,8 @@ gl-sdk-cookbook/
 └── gllm/             # GL Language Model SDK examples
 ```
 
-## 🆘 Support
+## 📚 Support
 
-- 📚 [GL SDK Documentation](https://gdplabs.gitbook.io/sdk)
-- 📚 [GL AIP Documentation](https://gdplabs.gitbook.io/gl-aip)
-- 📚 [GLChat Documentation](https://gdplabs.gitbook.io/glchat)
+- 📘 [GL SDK Documentation](https://gdplabs.gitbook.io/sdk)
+- 📘 [GL AIP Documentation](https://gdplabs.gitbook.io/gl-aip)
+- 📘 [GLChat Documentation](https://gdplabs.gitbook.io/glchat)

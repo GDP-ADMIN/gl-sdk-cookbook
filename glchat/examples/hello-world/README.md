@@ -1,3 +1,7 @@
+## ⚙️ Prerequisites
+
+Please refer to prerequisites [here](../../README.md#️-prerequisites).
+
 ## 🚀 Getting Started
 
 1. **Clone the repository**
