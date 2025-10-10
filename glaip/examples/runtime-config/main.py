@@ -17,22 +17,19 @@ agent = client.create_agent(
     instruction="You are a friendly AI assistant. Use the bosa_sql_query tool to query the database.",
     model="gpt-4.1",
     tools=[bosa_sql_query_tool_id],
-    tool_configs={
-        bosa_sql_query_tool_id: {
-            "database_url": "postgresql://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs",
-        },
-    },
-    # runtime_config={
-    #     "agent_config": {
-    #         "lm_hyperparameters": {"temperature": 0.2},
-    #     },
-    #     "tool_configs": {
-    #         bosa_sql_query_tool_id: {
-    #             "database_url": "postgresql://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs",
-    #         },
-    #     },
-    # },
 )
 
-agent.run("How many tables are in the database?")
+agent.run(
+    "How many tables are in the database?",
+    runtime_config={
+        "agent_config": {
+            "lm_hyperparameters": {"temperature": 0.2},
+        },
+        "tool_configs": {
+            bosa_sql_query_tool_id: {
+                "database_url": "postgresql://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs",
+            },
+        },
+    },
+)
 agent.delete()
