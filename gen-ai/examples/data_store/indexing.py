@@ -11,7 +11,7 @@ import asyncio
 
 from dotenv import load_dotenv
 from gllm_core.schema import Chunk
-from gllm_datastore.vector_data_store import InMemoryVectorDataStore
+from gllm_datastore.vector_data_store import ChromaVectorDataStore
 from gllm_inference.em_invoker import OpenAIEMInvoker
 
 load_dotenv()
@@ -20,7 +20,8 @@ load_dotenv()
 async def main():
     """Index data into a vector store and query it using semantic search."""
     # Initialize vector store with embedding model
-    vector_store = InMemoryVectorDataStore(
+    vector_store = ChromaVectorDataStore(
+        collection_name="documents",
         embedding=OpenAIEMInvoker(model_name="text-embedding-3-small"),
     )
 
