@@ -39,6 +39,15 @@ Please refer to prerequisites [here](../../../README.md).
    uv run indexing.py
    ```
 
+   Notes:
+   When running the pipeline, you may encounter an error like this:
+
+   ```
+      [2025-08-26T14:36:10+0700.550 chromadb.telemetry.product.posthog ERROR] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+   ```
+
+   Don't worry about this, since we do not use this Chroma feature. Your data store will still work.
+
 ## 🚀 Reference
 
 These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/index-your-data-with-vector-data-store).
