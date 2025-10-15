@@ -46,56 +46,209 @@ Please refer to prerequisites [here](../../../README.md).
 
 6. **Expected Output**
 
-   You should see a response similar to the following:
+   When `use_knowledge_base` is set to `True`, you should see a response similar to the following:
 
    ```log
-   2025-10-10T16:14:35 DEBUG    [BasicVectorRetriever] [Start 'BasicVectorRetriever'] Processing input:
-                                    - query: 'Give me nocturnal creatures from the dataset'                                                                                              
-                                    - top_k: 5        
-   2025-10-10T16:14:35 DEBUG    [BasicVectorRetriever] [Finished 'BasicVectorRetriever'] Successfully retrieved 5 chunks.
-                                 - Rank: 1    
-                                    ID: db9c9b9b-3294-4dd7-963a-068609c59da0   
-                                    Content: The Luminafox is a nocturnal creature inhabiting t...                                    
-                                    Score: 0.46340865561317823
-                                    Metadata:         
-                                    - name: Luminafox
-                                 - Rank: 2        
-                                    ID: 9ccb874b-5927-4b52-a67f-194666f92a1b  
-                                    Content: The Dusk Panther prowls the twilight forests of Sh...
-                                    Score: 0.45421676886176693
-                                    Metadata: 
-                                    - name: Dusk Panther   
-                                 - Rank: 3                         
-                                    ID: dff85b13-950c-424c-9312-fc086bd96086
-                                    Content: The Gloombat flits through the dark caverns of Dus...          
-                                    Score: 0.443562629568115    
-                                    Metadata:     
-                                    - name: Gloombat           
-                                 - Rank: 4       
-                                    ID: a38c7e84-78e2-4431-af77-c415e103b0fd   
-                                    Content: The Moonstalker is a nocturnal predator prowling t...
-                                    Score: 0.4423182992927307
-                                    Metadata:
-                                    - name: Moonstalker 
-                                 - Rank: 5
-                                    ID: 95ea2f37-3fa7-43d2-9049-bed203fa71cf 
-                                    Content: The Glowhopper is an insect-like creature residing...
-                                    Score: 0.423173318343201
-                                    Metadata:
-                                    - name: Glowhopper         
-   2025-10-10T16:14:35 DEBUG    [ResponseSynthesizer] [Start 'ResponseSynthesizer'] Processing query: 'Give me nocturnal creatures from the dataset'                                                       
-   2025-10-10T16:14:41 DEBUG    [ResponseSynthesizer] [Finished 'ResponseSynthesizer'] Successfully synthesized response: 
-                              'Nocturnal creatures in the dataset:\n- Luminafox — glow-in-the-dark fur; inhabits luminescent forests of Nyxland.\n- Dusk Panther —                     
-                              prowls twilight forests of Shadowglade; stealthy hunter.\n- Gloombat — flits through dark caverns of Dusk Hollow; echolocation                           
-                              navigator.\n- Moonstalker — stalks the silver dunes of Lunar Plains; reflective coat aids camouflage.\n- Glowhopper — resident of                        
-                              luminescent marshes in Lumina Bog; hops with light-emitting trails.'                                                                                     
-   Pipeline result: Nocturnal creatures in the dataset:
-   - Luminafox — glow-in-the-dark fur; inhabits luminescent forests of Nyxland.
-   - Dusk Panther — prowls twilight forests of Shadowglade; stealthy hunter.
-   - Gloombat — flits through dark caverns of Dusk Hollow; echolocation navigator.
-   - Moonstalker — stalks the silver dunes of Lunar Plains; reflective coat aids camouflage.
-   - Glowhopper — resident of luminescent marshes in Lumina Bog; hops with light-emitting trails.
+   2025-10-15T11:19:43 DEBUG    [BasicVectorRetriever] [Start                       component.py:130
+                             'BasicVectorRetriever'] Processing input:                           
+                                 - query: 'Give me nocturnal creatures from the                  
+                             dataset'                                                            
+                                 - top_k: 5                                                      
+   2025-10-15T11:19:43 INFO     [OpenAIEMInvoker] Invoking 'OpenAIEMInvoker'       em_invoker.py:125
+   2025-10-15T11:19:45 ERROR     Failed to send telemetry event CollectionQueryEvent:  posthog.py:61
+                              capture() takes 1 positional argument but 3 were given              
+   2025-10-15T11:19:45 DEBUG    [BasicVectorRetriever] [Finished                    component.py:130
+                              'BasicVectorRetriever'] Successfully retrieved 5                    
+                              chunks.                                                             
+                                 - Rank: 1                                                         
+                                    ID: ad636e30-7ba8-48f6-b52e-9b390207ca68                        
+                                    Content: The Luminafox is a nocturnal creature                  
+                              inhabiting t...                                                     
+                                    Score: 0.46336014089183336                                      
+                                    Metadata:                                                       
+                                    - name: Luminafox                                             
+                                 - Rank: 2                                                         
+                                    ID: ad215dd9-1568-4c94-8734-86aee3f1a5a8                        
+                                    Content: The Dusk Panther prowls the twilight                   
+                              forests of Sh...                                                    
+                                    Score: 0.4541605560513348                                       
+                                    Metadata:                                                       
+                                    - name: Dusk Panther                                          
+                                 - Rank: 3                                                         
+                                    ID: 96d317a1-a2df-43da-8d1d-373715fa9d71                        
+                                    Content: The Gloombat flits through the dark                    
+                              caverns of Dus...                                                   
+                                    Score: 0.4435190881711845                                       
+                                    Metadata:                                                       
+                                    - name: Gloombat                                              
+                                 - Rank: 4                                                         
+                                    ID: 730a0a12-ce42-437e-821f-10ec2a6c6d7a                        
+                                    Content: The Moonstalker is a nocturnal                         
+                              predator prowling t...                                              
+                                    Score: 0.44254742105417083                                      
+                                    Metadata:                                                       
+                                    - name: Moonstalker                                           
+                                 - Rank: 5                                                         
+                                    ID: 31f1bf5f-732d-4b4e-bcc4-56cb29b828ef                        
+                                    Content: The Glowhopper is an insect-like                       
+                              creature residing...                                                
+                                    Score: 0.42312825178877955                                      
+                                    Metadata:                                                       
+                                    - name: Glowhopper                                            
+   2025-10-15T11:19:45 DEBUG    [ResponseSynthesizer] [Start 'ResponseSynthesizer'] component.py:130
+                              Processing query: 'Give me nocturnal creatures from                 
+                              the dataset'                                                        
+   2025-10-15T11:19:45 INFO     [OpenAILMInvoker] Invoking 'OpenAILMInvoker'       lm_invoker.py:252
+   2025-10-15T11:19:55 INFO     [LMRequestProcessor] LM invocation       lm_request_processor.py:195
+                              result:                                                             
+                              '- Luminafox — a nocturnal creature with                            
+                              glowing fur; navigates by bioluminescent                            
+                              trails and hunts nocturnal insects.  \n-                            
+                              Dusk Panther — prowls twilight/ night                               
+                              forests; a stealthy hunter associated                               
+                              with mystery and secrets.  \n- Gloombat                             
+                              — flits through dark caverns; uses                                  
+                              echolocation; active in the cave’s                                  
+                              darkness.  \n- Moonstalker — a nocturnal                            
+                              predator on the Lunar Plains; uses night                            
+                              vision and silent movement.  \n-                                    
+                              Glowhopper — resides in bioluminescent                              
+                              marshes; glows to attract pollinators                               
+                              and guides travelers in darkness.'                                  
+   2025-10-15T11:19:55 DEBUG    [ResponseSynthesizer] [Finished                     component.py:130
+                              'ResponseSynthesizer'] Successfully synthesized                     
+                              response:                                                           
+                              '- Luminafox — a nocturnal creature with glowing                    
+                              fur; navigates by bioluminescent trails and hunts                   
+                              nocturnal insects.  \n- Dusk Panther — prowls                       
+                              twilight/ night forests; a stealthy hunter                          
+                              associated with mystery and secrets.  \n- Gloombat                  
+                              — flits through dark caverns; uses echolocation;                    
+                              active in the cave’s darkness.  \n- Moonstalker — a                 
+                              nocturnal predator on the Lunar Plains; uses night                  
+                              vision and silent movement.  \n- Glowhopper —                       
+                              resides in bioluminescent marshes; glows to attract                 
+                              pollinators and guides travelers in darkness.'                      
+   Pipeline result: - Luminafox — a nocturnal creature with glowing fur; navigates by bioluminescent trails and hunts nocturnal insects.  
+   - Dusk Panther — prowls twilight/ night forests; a stealthy hunter associated with mystery and secrets.  
+   - Gloombat — flits through dark caverns; uses echolocation; active in the cave’s darkness.  
+   - Moonstalker — a nocturnal predator on the Lunar Plains; uses night vision and silent movement.  
+   - Glowhopper — resides in bioluminescent marshes; glows to attract pollinators and guides travelers in darkness.
+   ```
+
+   Otherwise, you should see output like
+   ```log
+   2025-10-15T11:21:43 DEBUG    [ResponseSynthesizer] [Start 'ResponseSynthesizer'] component.py:130
+                             Processing query: 'Give me nocturnal creatures from                 
+                             the dataset'                                                        
+   2025-10-15T11:21:43 WARNING  [StuffSynthesisStrategy] The         stuff_synthesis_strategy.py:101
+                              'context' key is empty. Assigning                                   
+                              default value: ''.                                                  
+   2025-10-15T11:21:43 INFO     [OpenAILMInvoker] Invoking 'OpenAILMInvoker'       lm_invoker.py:252
+   2025-10-15T11:21:55 INFO     [LMRequestProcessor] LM invocation       lm_request_processor.py:195
+                              result:                                                             
+                              'I don’t have your dataset here. If you                             
+                              share the dataset or its structure                                  
+                              (column names and a few rows), I can                                
+                              return the nocturnal creatures. In the                              
+                              meantime, here are quick ways to filter                             
+                              for nocturnal animals in common                                     
+                              formats.\n\nKey idea\n- Look for a field                            
+                              that indicates activity period, e.g.,                               
+                              activity_period or nocturnal                                        
+                              (boolean).\n- If there isn’t a flag,                                
+                              infer nocturnal from values like                                    
+                              night/nighttime/overnight in the                                    
+                              activity_period.\n\nPython (pandas)\n-                              
+                              Using a boolean flag:\n  nocturnal_df =                             
+                              df[df[\'nocturnal\'].astype(bool)]\n-                               
+                              Inferring from activity_period:\n  mask                             
+                              =                                                                   
+                              df[\'activity_period\'].astype(str).str.                            
+                              contains(r\'night|overnight|nocturnal\',                            
+                                 case=False, na=False)\n  nocturnal_df =                            
+                              df\n\nSQL\nSELECT * FROM dataset\nWHERE                             
+                              nocturnal = TRUE\n   OR                                             
+                              LOWER(activity_period) LIKE                                         
+                              \'%night%\'\n   OR                                                  
+                              LOWER(activity_period) LIKE                                         
+                              \'%overnight%\';\n\nExcel/Sheets\n- If                              
+                              you have activity_period:\n  Use a                                  
+                              filter with criteria that contains                                  
+                              night/overnight/nocturnal.\n- Or add a                              
+                              helper column:\n                                                    
+                              =IF(ISNUMBER(SEARCH("night",                                        
+                              A2)),"Yes","No")\n  Filter where helper                             
+                              column = Yes.\n\nIf you can paste:\n-                               
+                              The dataset (or a small sample), or\n-                              
+                              The exact column names (e.g., which                                 
+                              column indicates nocturnal                                          
+                              activity),\n\nI’ll generate the                                     
+                              nocturnal subset for you.'                                          
+   2025-10-15T11:21:55 DEBUG    [ResponseSynthesizer] [Finished                     component.py:130
+                              'ResponseSynthesizer'] Successfully synthesized                     
+                              response:                                                           
+                              'I don’t have your dataset here. If you share the                   
+                              dataset or its structure (column names and a few                    
+                              rows), I can return the nocturnal creatures. In the                 
+                              meantime, here are quick ways to filter for                         
+                              nocturnal animals in common formats.\n\nKey idea\n-                 
+                              Look for a field that indicates activity period,                    
+                              e.g., activity_period or nocturnal (boolean).\n- If                 
+                              there isn’t a flag, infer nocturnal from values                     
+                              like night/nighttime/overnight in the                               
+                              activity_period.\n\nPython (pandas)\n- Using a                      
+                              boolean flag:\n  nocturnal_df =                                     
+                              df[df[\'nocturnal\'].astype(bool)]\n- Inferring                     
+                              from activity_period:\n  mask =                                     
+                              df[\'activity_period\'].astype(str).str.contains(r\                 
+                              'night|overnight|nocturnal\', case=False,                           
+                              na=False)\n  nocturnal_df = df\n\nSQL\nSELECT *                     
+                              FROM dataset\nWHERE nocturnal = TRUE\n   OR                         
+                              LOWER(activity_period) LIKE \'%night%\'\n   OR                      
+                              LOWER(activity_period) LIKE                                         
+                              \'%overnight%\';\n\nExcel/Sheets\n- If you have                     
+                              activity_period:\n  Use a filter with criteria that                 
+                              contains night/overnight/nocturnal.\n- Or add a                     
+                              helper column:\n  =IF(ISNUMBER(SEARCH("night",                      
+                              A2)),"Yes","No")\n  Filter where helper column =                    
+                              Yes.\n\nIf you can paste:\n- The dataset (or a                      
+                              small sample), or\n- The exact column names (e.g.,                  
+                              which column indicates nocturnal activity),\n\nI’ll                 
+                              generate the nocturnal subset for you.'                             
+   Pipeline result: I don’t have your dataset here. If you share the dataset or its structure (column names and a few rows), I can return the nocturnal creatures. In the meantime, here are quick ways to filter for nocturnal animals in common formats.
+
+   Key idea
+   - Look for a field that indicates activity period, e.g., activity_period or nocturnal (boolean).
+   - If there isn’t a flag, infer nocturnal from values like night/nighttime/overnight in the activity_period.
+
+   Python (pandas)
+   - Using a boolean flag:
+   nocturnal_df = df[df['nocturnal'].astype(bool)]
+   - Inferring from activity_period:
+   mask = df['activity_period'].astype(str).str.contains(r'night|overnight|nocturnal', case=False, na=False)
+   nocturnal_df = df[mask]
+
+   SQL
+   SELECT * FROM dataset
+   WHERE nocturnal = TRUE
+      OR LOWER(activity_period) LIKE '%night%'
+      OR LOWER(activity_period) LIKE '%overnight%';
+
+   Excel/Sheets
+   - If you have activity_period:
+   Use a filter with criteria that contains night/overnight/nocturnal.
+   - Or add a helper column:
+   =IF(ISNUMBER(SEARCH("night", A2)),"Yes","No")
+   Filter where helper column = Yes.
+
+   If you can paste:
+   - The dataset (or a small sample), or
+   - The exact column names (e.g., which column indicates nocturnal activity),
+
+   I’ll generate the nocturnal subset for you.
+   
    ```
 
 ## 🚀 Reference
-These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/build-end-to-end-rag-pipeline/your-first-rag-pipeline).
+These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/build-end-to-end-rag-pipeline/).
