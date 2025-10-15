@@ -1,5 +1,4 @@
-"""Example script to build an run a simple RAG pipeline.
-
+"""Example script to build and run a simple RAG pipeline with semantic routing.
 Authors:
     Delfia N. A. Putri (delfia.n.a.putri@gdplabs.id)
 
