@@ -1,7 +1,7 @@
-"""Example script to build and run a RAG pipeline with .
+"""Example script to build and run a RAG pipeline with simple guardrail.
 
 Authors:
-    Delfia N.A Putri (delfia.n.a.putri@gdplabs.id)
+    Delfia N. A. Putri (delfia.n.a.putri@gdplabs.id)
 
 References:
     [1] https://gdplabs.gitbook.io/sdk/how-to-guides/build-end-to-end-rag-pipeline/simple-guardrail
