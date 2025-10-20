@@ -1,0 +1,25 @@
+# English translations for MyApp
+# Copyright (C) 2025 MyCompany
+# This file is distributed under the same license as the MyApp package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MyApp 1.0\n"
+"Report-Msgid-Bugs-To: bugs@example.com\n"
+"POT-Creation-Date: 2025-10-20 10:00+0000\n"
+"PO-Revision-Date: 2025-10-20 10:00+0000\n"
+"Last-Translator: Translator <translator@example.com>\n"
+"Language-Team: English <en@example.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "greeting"
+msgstr "Hello!"
+
+msgid "has_message"
+msgid_plural "has_message"
+msgstr[0] "You have {count} message"
+msgstr[1] "You have {count} messages"

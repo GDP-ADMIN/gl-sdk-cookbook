@@ -1,0 +1,16 @@
+[project]
+name = "i18n"
+version = "0.0.0"
+description = "i18n usage example"
+requires-python = ">=3.11,<3.14"
+readme = "README.md"
+dependencies = [
+    "gllm-intl<1.0.0",
+]
+
+[[tool.uv.index]]
+name = "gen-ai-internal"
+url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
+
+[tool.uv.sources]
+gllm-intl = { index = "gen-ai-internal" }
