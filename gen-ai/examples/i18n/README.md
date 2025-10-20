@@ -34,4 +34,4 @@ Please refer to prerequisites [here](../../../README.md).
 
 ## 🚀 Reference
 
-These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/using-translations).
+These examples are based on the [GL SDK Gitbook documentation How-to-Guide page](https://gdplabs.gitbook.io/sdk/how-to-guides/get-started-with-translations).
