@@ -1,0 +1,35 @@
+[project]
+name = "hello-world-local"
+version = "0.1.0"
+description = "Hello World - Local agent execution without server deployment"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "glaip-sdk[local,privacy,memory]",
+]
+
+[tool.uv.sources]
+glaip-sdk = { path = "../../../glaip-sdk", editable = true }
+
+# Private registries for aip-agents internal dependencies:
+# - gen-ai-internal: gllm-privacy, gllm-memory packages
+# - gen-ai: gllm-memory dependencies (e.g., gllm-datastore-binary)
+# Note: gllm-memory is sourced from gen-ai-internal but requires gen-ai for its dependencies
+[[tool.uv.index]]
+name = "gen-ai-internal"
+url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
+
+[[tool.uv.index]]
+name = "gen-ai"
+url = "https://glsdk.gdplabs.id/gen-ai/simple/"
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
