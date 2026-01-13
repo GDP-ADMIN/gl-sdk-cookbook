@@ -4,7 +4,7 @@ This example demonstrates how to build a complex agent that uses multiple tools 
 
 ## Key Features
 - **Modular Packaging**: The Weather tool is a full Python package (`weather/`) with internal helper files.
-- **Standalone Tools**: Flight status and Stock checker tools are simple single-file implementations.
+- **Standalone Tools**: Flight status, Stock checker, and Travel math tools are simple single-file implementations.
 - **Agent Orchestration**: A single agent intelligently selects between these specialized tools.
 
 ## Structure
@@ -12,6 +12,7 @@ This example demonstrates how to build a complex agent that uses multiple tools 
 - `tools/weather/`: A modular tool package with helper logic.
 - `tools/flight_status.py`: Single-file tool example.
 - `tools/stock_checker.py`: Single-file tool example.
+- `tools/travel_math.py`: Single-file tool example.
 
 ## ⚙️ Prerequisites
 
