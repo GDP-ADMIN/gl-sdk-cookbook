@@ -11,7 +11,7 @@ from typing import Any
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
 
-from .service import get_mock_weather
+from tools.weather.service import get_mock_weather
 
 
 class WeatherInput(BaseModel):
