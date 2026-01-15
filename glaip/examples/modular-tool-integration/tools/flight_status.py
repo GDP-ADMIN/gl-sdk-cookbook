@@ -9,6 +9,13 @@ Authors:
 from typing import Any
 
 from langchain_core.tools import BaseTool
+from pydantic import BaseModel, Field
+
+
+class FlightStatusInput(BaseModel):
+    """Input schema for the flight status tool."""
+
+    flight_number: str = Field(description="The flight number to check (e.g., GA123)")
 
 
 class FlightStatusTool(BaseTool):
@@ -16,6 +23,7 @@ class FlightStatusTool(BaseTool):
 
     name: str = "get_flight_status"
     description: str = "Returns the status of a flight by flight number."
+    args_schema: type[BaseModel] = FlightStatusInput
 
     def _run(self, flight_number: str, **kwargs: Any) -> str:
         """Run the flight status check.

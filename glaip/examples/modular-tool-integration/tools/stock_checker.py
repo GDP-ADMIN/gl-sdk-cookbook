@@ -9,6 +9,13 @@ Authors:
 from typing import Any
 
 from langchain_core.tools import BaseTool
+from pydantic import BaseModel, Field
+
+
+class StockCheckerInput(BaseModel):
+    """Input schema for the stock checker tool."""
+
+    ticker: str = Field(description="The stock ticker symbol (e.g., AAPL)")
 
 
 class StockCheckerTool(BaseTool):
@@ -16,6 +23,7 @@ class StockCheckerTool(BaseTool):
 
     name: str = "get_stock_price"
     description: str = "Returns the current stock price for a given ticker symbol."
+    args_schema: type[BaseModel] = StockCheckerInput
 
     def _run(self, ticker: str, **kwargs: Any) -> str:
         """Run the stock price check.

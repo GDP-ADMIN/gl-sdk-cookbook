@@ -9,8 +9,15 @@ Authors:
 from typing import Any
 
 from langchain_core.tools import BaseTool
+from pydantic import BaseModel, Field
 
 from .service import get_mock_weather
+
+
+class WeatherInput(BaseModel):
+    """Input schema for the weather tool."""
+
+    city: str = Field(description="The city to check weather for")
 
 
 class WeatherTool(BaseTool):
@@ -21,6 +28,7 @@ class WeatherTool(BaseTool):
 
     name: str = "get_weather"
     description: str = "Returns current weather for a city."
+    args_schema: type[BaseModel] = WeatherInput
 
     def _run(self, city: str, **kwargs: Any) -> str:
         """Run the weather tool logic.
