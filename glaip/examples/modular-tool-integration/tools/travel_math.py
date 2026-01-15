@@ -9,6 +9,13 @@ Authors:
 from typing import Any
 
 from langchain_core.tools import BaseTool
+from pydantic import BaseModel, Field
+
+
+class TravelMathInput(BaseModel):
+    """Input schema for the travel math tool."""
+
+    expression: str = Field(description="The arithmetic expression to evaluate")
 
 
 class TravelMathTool(BaseTool):
@@ -16,6 +23,7 @@ class TravelMathTool(BaseTool):
 
     name: str = "travel_calculator"
     description: str = "Performs currency conversion and travel budget calculations."
+    args_schema: type[BaseModel] = TravelMathInput
 
     def _run(self, expression: str, **kwargs: Any) -> str:
         """Perform calculation logic.
