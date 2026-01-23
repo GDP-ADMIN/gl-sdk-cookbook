@@ -1,7 +1,7 @@
 [project]
-name = "hello-world-single-agent"
+name = "hello-world-multi-agent"
 version = "0.1.0"
-description = "Hello World - Single agent using config-based Agent() pattern"
+description = "Hello World - Multi-agent coordinator pattern"
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "pydantic>=2.0.0",
