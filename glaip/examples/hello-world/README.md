@@ -1,46 +1,40 @@
-## ⚙️ Prerequisites
+# Hello World - Single Agent
 
-Refer to the [main prerequisites documentation](../../README.md#️-prerequisites) for detailed setup requirements.
+A minimal example demonstrating the simplest way to deploy an agent using direct `Agent()` instantiation.
 
-## 🚀 Getting Started
+**Pattern:** Config-based `Agent()` instantiation
+**Use when:** Simple agents, quick prototypes, one-off deployments
 
-### 1. Clone the Repository
+## Quick Start
 
-```bash
-git clone https://github.com/GDP-ADMIN/gl-sdk-cookbook.git
-cd gl-sdk-cookbook/glaip/examples/hello-world
-```
+1. **Setup environment**
 
-### 2. Install Dependencies
+   ```bash
+   cp .env.example .env
+   # Edit .env with your AIP_API_URL and AIP_API_KEY
+   ```
 
-```bash
-uv sync
-```
+2. **Install dependencies**
 
-This command installs the GLAIP-SDK as specified in `pyproject.toml`.
+   ```bash
+   uv sync
+   ```
 
-For detailed GLAIP SDK installation instructions, see the [official installation guide](https://gdplabs.gitbook.io/gl-aip/gl-aip-sdk/get-started/install-and-configure).
+3. **Deploy the agent**
 
-### 3. Run the Example
+   ```bash
+   uv run main.py
+   ```
 
-```bash
-uv run main.py
-```
-
-### 4. Expected Output
-
-Upon successful execution, you should see output similar to:
+## Project Structure
 
 ```
-───────────────────────────────────────────── 🤖 hello-world-agent ─────────────────────────────────────────────
- ──────────────────────────────────────────────── User Request ────────────────────────────────────────────────
-  Query: Hello! How are you today?
- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
- ─────────────────────────────────────────────────── Steps ────────────────────────────────────────────────────
-  No steps yet
- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
- ──────────────────────────────────────────────── Final Result ────────────────────────────────────────────────
-  Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you. How can I
-  assist you today? 😊
- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+hello-world-single-agent/
+├── agents/
+│   └── hello_agent.py    # Agent definition
+├── tools/
+│   └── greeting.py       # Custom LangChain tool
+├── main.py               # Entry point
+├── pyproject.toml
+└── .env.example
 ```
