@@ -1,0 +1,17 @@
+[project]
+name = "evaluations-getting-started"
+version = "0.0.0"
+description = "Getting started with GenAI evaluations"
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+dependencies = [
+    "gllm-evals[deepeval,langchain,ragas]>=0.1.0,<0.2.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+]
+
+[[tool.uv.index]]
+name = "gen-ai-internal"
+url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
+
+[tool.uv.sources]
+gllm-evals = { index = "gen-ai-internal" }
