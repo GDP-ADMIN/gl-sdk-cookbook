@@ -1,6 +1,5 @@
 """Configurable research formatter tool - demonstrates tool_configs."""
 
-from gllm_plugin.tools import tool_plugin
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
@@ -21,7 +20,6 @@ class FormatterInput(BaseModel):
     papers: list[dict] = Field(default_factory=list, description="Papers to format")
 
 
-@tool_plugin(version="1.0.0")
 class ResearchFormatterTool(BaseTool):
     """Format research results with configurable style."""
 

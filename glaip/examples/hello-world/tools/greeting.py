@@ -1,6 +1,5 @@
 """Greeting Tool - generates personalized greetings."""
 
-from gllm_plugin.tools import tool_plugin
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
 
@@ -15,7 +14,6 @@ class GreetingInput(BaseModel):
     )
 
 
-@tool_plugin(version="1.0.0")
 class GreetingTool(BaseTool):
     """Generate a personalized greeting."""
 

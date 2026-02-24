@@ -3,7 +3,10 @@
 Exports MCP configurations for Model Context Protocol servers.
 """
 
+from dotenv import load_dotenv
 from glaip_sdk.mcps import MCP
+
+load_dotenv(override=True)
 
 # DeepWiki MCP - provides access to public repository documentation
 # Available tools:

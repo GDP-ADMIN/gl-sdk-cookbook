@@ -1,6 +1,5 @@
 """Farewell Tool - generates personalized farewells."""
 
-from gllm_plugin.tools import tool_plugin
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
 
@@ -15,7 +14,6 @@ class FarewellInput(BaseModel):
     )
 
 
-@tool_plugin(version="1.0.0")
 class FarewellTool(BaseTool):
     """Generate a personalized farewell."""
 

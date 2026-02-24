@@ -1,37 +1,14 @@
-"""Hello World - Multi-Agent Example.
+"""Hello World - Multi-Agent Example with Coordinator."""
 
-This demonstrates the multi-agent coordinator pattern with:
-- A coordinator agent that orchestrates sub-agents
-- Sub-agents that share tools (tools are deployed only once)
-- Caching to prevent duplicate deployments
+from glaip_sdk.agents import Agent
+from agents import formal_greeter, casual_greeter
 
-Architecture:
-    GreetingCoordinator (coordinator)
-    ├── FormalGreeter (sub-agent) - formal greetings
-    ├── CasualGreeter (sub-agent) - casual greetings
-    └── Shared GreetingTool deployed only once
+greeting_coordinator = Agent(
+    name="greeting_coordinator",
+    instruction="You are a coordinator that directs greeting specialists to create personalized greetings.",
+    description="Coordinates greeting specialists for personalized greetings",
+    agents=[formal_greeter, casual_greeter],
+)
 
-Pattern: Multi-agent with coordinator
-Use when: Complex workflows requiring multiple specialized agents
-"""
-
-from agents import greeting_coordinator
-from dotenv import load_dotenv
-
-load_dotenv(override=True)
-
-
-def main() -> None:
-    """Deploy the multi-agent coordinator."""
-    print("=" * 60)
-    print("Hello World - Multi-Agent Coordinator")
-    print("=" * 60)
-
-    deployed = greeting_coordinator.deploy()
-
-    print("\n✓ Multi-agent system deployed successfully!")
-    print(f"  Coordinator: {deployed.name} (ID: {deployed.id})")
-
-
-if __name__ == "__main__":
-    main()
+greeting_coordinator.deploy()
+greeting_coordinator.run("Hello, who are you?")

@@ -1,31 +1,13 @@
-"""Hello World - Single Agent Example.
+"""Hello World - Single Agent Example."""
+    
+from glaip_sdk import Agent
+from tools import GreetingTool, time_tool
 
-This demonstrates the simplest way to deploy an agent using
-the config-based Agent() pattern.
-
-Pattern: Direct instantiation with Agent()
-Use when: Simple agents, quick prototypes, one-off agents
-"""
-
-from agents import hello_agent
-
-from dotenv import load_dotenv
-
-load_dotenv(override=True)
-
-
-def main() -> None:
-    """Deploy the hello world agent."""
-    print("=" * 60)
-    print("Hello World - Single Agent")
-    print("=" * 60)
-
-    deployed = hello_agent.deploy()
-
-    print("\n✓ Agent deployed successfully!")
-    print(f"  ID: {deployed.id}")
-    print(f"  Name: {deployed.name}")
-
-
-if __name__ == "__main__":
-    main()
+hello_agent = Agent(
+    name="hello_agent",
+    instruction="""You are a friendly greeting assistant with knowledge capabilities.""",
+    description="A friendly agent that greets users and can explore GitHub repos",
+    tools=[GreetingTool, time_tool],
+)
+hello_agent.deploy()
+hello_agent.run("Hello, who are you?")
