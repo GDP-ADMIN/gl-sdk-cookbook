@@ -13,11 +13,11 @@ This example demonstrates how to run a glaip-sdk agent **locally** without deplo
 
 ### Base Installation
 
-Install all dependencies using `make sync`:
+Install all dependencies using `uv sync`:
 
 ```bash
 cd python/gl-agents/projects/hello-world-local
-make sync
+uv sync
 ```
 
 This will:
@@ -95,7 +95,7 @@ python <example_file>.py
 
 ## Available Examples & Commands
 
-> **Prerequisites**: Run `make sync` first to install all dependencies. All examples below assume dependencies are already installed.
+> **Prerequisites**: Run `uv sync` first to install all dependencies. All examples below assume dependencies are already installed.
 
 | Example File | Command | Description | Required Env Vars |
 |-------------|---------|-------------|------------------|
