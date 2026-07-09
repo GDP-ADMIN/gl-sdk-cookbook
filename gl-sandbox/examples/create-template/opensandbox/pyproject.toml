@@ -1,0 +1,17 @@
+[project]
+name = "opensandbox-template"
+version = "0.0.0"
+description = "Build an OpenSandbox snapshot template and create a sandbox from it with gllm-tools"
+requires-python = ">=3.11,<3.14"
+readme = "README.md"
+dependencies = [
+    "gllm-tools[opensandbox]>=0.2.0,<0.3.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+]
+
+[[tool.uv.index]]
+name = "gen-ai-internal"
+url = "https://glsdk.gdplabs.id/gen-ai-internal/simple/"
+
+[tool.uv.sources]
+gllm-tools = { index = "gen-ai-internal" }
