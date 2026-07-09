@@ -15,12 +15,16 @@ sandbox, and pre-building reusable sandbox templates.
 ## Examples
 
 
-| Example                                          | Demonstrates                                         | Prerequisites                       |
-| -------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
-| [`e2b_sandbox`](./e2b_sandbox)                   | Run code + shell commands on E2B                     | E2B API key                         |
-| [`opensandbox_sandbox`](./opensandbox_sandbox)   | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
-| [`e2b_template`](./e2b_template)                 | Build an E2B template, then create a sandbox from it | E2B API key                         |
-| [`opensandbox_template`](./opensandbox_template) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
+Examples are grouped by what they do: **`running-sandbox/`** executes code in a sandbox, and
+**`create-template/`** pre-builds a reusable template first. Each group has one directory per
+backend.
+
+| Example                                                      | Demonstrates                                         | Prerequisites                       |
+| -------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
+| [`running-sandbox/e2b`](./running-sandbox/e2b)               | Run code + shell commands on E2B                     | E2B API key                         |
+| [`running-sandbox/opensandbox`](./running-sandbox/opensandbox) | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
+| [`create-template/e2b`](./create-template/e2b)               | Build an E2B template, then create a sandbox from it | E2B API key                         |
+| [`create-template/opensandbox`](./create-template/opensandbox) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
 
 ## Shared setup
 
