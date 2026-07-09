@@ -32,6 +32,7 @@ async def main() -> None:
         domain=os.getenv("OPENSANDBOX_DOMAIN", "localhost:8080"),
         api_key=os.getenv("OPENSANDBOX_API_KEY"),
         protocol=os.getenv("OPENSANDBOX_PROTOCOL", "http"),
+        use_server_proxy=os.getenv("OPENSANDBOX_SERVER_PROXY", "true").lower() == "true",
     )
     try:
         await run_code(sandbox)

@@ -15,8 +15,6 @@ from gllm_tools.code_interpreter.code_template.opensandbox_template_builder impo
 
 load_dotenv()
 
-DOMAIN = os.getenv("OPENSANDBOX_DOMAIN", "localhost:8080")
-
 CODE = """
 import requests
 print("requests:", requests.__version__)
@@ -42,8 +40,10 @@ async def build_template() -> str:
 async def run_on_template(snapshot_name: str) -> None:
     """Create a sandbox from the predefined snapshot and run code in it."""
     sandbox = await OpenSandbox.create(
-        domain=DOMAIN,
+        domain=os.getenv("OPENSANDBOX_DOMAIN", "localhost:8080"),
         api_key=os.getenv("OPENSANDBOX_API_KEY"),
+        protocol=os.getenv("OPENSANDBOX_PROTOCOL", "http"),
+        use_server_proxy=os.getenv("OPENSANDBOX_SERVER_PROXY", "true").lower() == "true",
         snapshot_name=snapshot_name,
     )
     try:
