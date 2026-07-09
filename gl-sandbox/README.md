@@ -1,10 +1,15 @@
-# GL Sandbox — Code Interpreter Examples
+# GL Sandbox
 
-Runnable examples for the **code interpreter** capabilities of
-[`gllm-tools`](https://gdplabs.gitbook.io/sdk) — executing untrusted code inside an isolated
-sandbox, and pre-building reusable sandbox templates.
+Runnable examples for **GL Sandbox** — running untrusted code inside an isolated sandbox, and
+pre-building reusable sandbox templates.
 
-`gllm_tools.code_interpreter` exposes two layers:
+> **Note on imports.** GL Sandbox is being extracted into its own library, but that migration is
+> still ongoing. Until it lands, GL Sandbox ships inside
+> [`gllm-tools`](https://gdplabs.gitbook.io/sdk) and every example imports it from
+> `gllm_tools.code_interpreter`. The `code_interpreter` name in those imports is the *current
+> home* of GL Sandbox, not a separate product.
+
+GL Sandbox exposes two layers:
 
 - **`code_sandbox`** — backends that execute code in an isolated environment. Every backend
   returns the same `ExecutionResult` (`.status`, `.stdout`, `.stderr`, `.text`, `.error`), so
@@ -14,17 +19,16 @@ sandbox, and pre-building reusable sandbox templates.
 
 ## Examples
 
-
 Examples are grouped by what they do: **`running-sandbox/`** executes code in a sandbox, and
 **`create-template/`** pre-builds a reusable template first. Each group has one directory per
 backend.
 
-| Example                                                      | Demonstrates                                         | Prerequisites                       |
-| -------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
-| [`running-sandbox/e2b`](./running-sandbox/e2b)               | Run code + shell commands on E2B                     | E2B API key                         |
-| [`running-sandbox/opensandbox`](./running-sandbox/opensandbox) | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
-| [`create-template/e2b`](./create-template/e2b)               | Build an E2B template, then create a sandbox from it | E2B API key                         |
-| [`create-template/opensandbox`](./create-template/opensandbox) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
+| Example                                                                 | Demonstrates                                         | Prerequisites                       |
+| ------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
+| [`running-sandbox/e2b`](./examples/running-sandbox/e2b)                 | Run code + shell commands on E2B                     | E2B API key                         |
+| [`running-sandbox/opensandbox`](./examples/running-sandbox/opensandbox) | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
+| [`create-template/e2b`](./examples/create-template/e2b)                 | Build an E2B template, then create a sandbox from it | E2B API key                         |
+| [`create-template/opensandbox`](./examples/create-template/opensandbox) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
 
 ## Shared setup
 
