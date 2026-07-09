@@ -26,6 +26,7 @@ gl-sdk-cookbook/
 ├── gen-ai/          # Gen AI SDK examples
 ├── glaip/           # GL AI Platform SDK examples
 ├── glchat/          # GL Chat SDK examples
+├── gl-sandbox/      # GL Sandbox SDK examples
 └── README.md
 ```
 
@@ -34,3 +35,4 @@ gl-sdk-cookbook/
 - 📘 [GL SDK Documentation](https://gdplabs.gitbook.io/sdk)
 - 📘 [GL AIP Documentation](https://gdplabs.gitbook.io/gl-aip)
 - 📘 [GLChat Documentation](https://gdplabs.gitbook.io/glchat)
+- 📘 [GL Sandbox Documentation](https://gdplabs.gitbook.io/gl-sandbox)
