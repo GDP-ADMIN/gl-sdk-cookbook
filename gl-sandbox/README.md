@@ -15,7 +15,8 @@ GL Sandbox exposes two layers:
   returns the same `ExecutionResult` (`.status`, `.stdout`, `.stderr`, `.text`, `.error`), so
   your code stays backend-agnostic.
 - **`code_template`** — build-time companions that bake dependencies into a reusable template
-  (an E2B alias / OpenSandbox snapshot) so a sandbox can be created *predefined* and start ready.
+  (an E2B alias / OpenSandbox snapshot / CubeSandbox warm snapshot) so a sandbox can be created
+  *predefined* and start ready.
 
 ## Examples
 
@@ -27,8 +28,10 @@ backend.
 | ------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
 | [`running-sandbox/e2b`](./examples/running-sandbox/e2b)                 | Run code + shell commands on E2B                     | E2B API key                         |
 | [`running-sandbox/opensandbox`](./examples/running-sandbox/opensandbox) | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
+| [`running-sandbox/cubesandbox`](./examples/running-sandbox/cubesandbox) | Run code + shell commands on a self-hosted CubeSandbox | Running CubeSandbox server and a template |
 | [`create-template/e2b`](./examples/create-template/e2b)                 | Build an E2B template, then create a sandbox from it | E2B API key                         |
 | [`create-template/opensandbox`](./examples/create-template/opensandbox) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
+| [`create-template/cubesandbox`](./examples/create-template/cubesandbox) | Build a CubeSandbox warm snapshot, then create from it | Running CubeSandbox server and an image with envd |
 
 ## Shared setup
 
