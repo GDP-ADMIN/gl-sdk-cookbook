@@ -23,7 +23,12 @@ print("requests:", requests.__version__)
 
 async def build_template() -> str:
     """Ensure the snapshot exists and return its name (the template reference)."""
-    builder = OpenSandboxTemplateBuilder(domain=DOMAIN, api_key=os.getenv("OPENSANDBOX_API_KEY"))
+    builder = OpenSandboxTemplateBuilder(
+        domain=os.getenv("OPENSANDBOX_DOMAIN", "localhost:8080"),
+        api_key=os.getenv("OPENSANDBOX_API_KEY"),
+        protocol=os.getenv("OPENSANDBOX_PROTOCOL", "http"),
+        use_server_proxy=os.getenv("OPENSANDBOX_SERVER_PROXY", "true").lower() == "true",
+    )
     spec = TemplateSpec(
         template_id="gllm-tools-requests",
         image="opensandbox/code-interpreter:v1.0.2",

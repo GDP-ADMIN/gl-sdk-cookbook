@@ -7,12 +7,12 @@ extra packages with `additional_packages`.
 
 ## Prerequisites
 
-- An E2B API key ([dashboard](https://e2b.dev/dashboard)). E2B is a SaaS backend, so no local1
+- An E2B API key ([dashboard](https://e2b.dev/dashboard)). E2B is a SaaS backend, so no local
   infrastructure is needed.
 - Access to the `gen-ai-internal` package index (a Google account with GDP Labs SDK access).
 
 > Needs `make`, `uv`, and `gcloud` (run `gcloud auth login` once). See the
-> [examples README](../README.md#installing-make) if `make` is missing.
+> [GL Sandbox README](../../../README.md#installing-make) if `make` is missing.
 
 ## Quick Start
 
