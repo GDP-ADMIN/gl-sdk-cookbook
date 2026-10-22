@@ -16,9 +16,8 @@ The `TemplateRef` value is the snapshot *name*; on create, that name resolves to
 - A **running OpenSandbox server** reachable at `OPENSANDBOX_DOMAIN` (default `localhost:8080`),
   with Docker and the OpenSandbox runtime available. See the
   [OpenSandbox docs](https://github.com/alibaba/OpenSandbox).
-- Access to the `gen-ai-internal` package index (a Google account with GDP Labs SDK access).
 
-> Needs `make`, `uv`, and `gcloud` (run `gcloud auth login` once). See the
+> Needs `make` and `uv`. See the
 > [GL Sandbox README](../../../README.md#installing-make) if `make` is missing.
 
 ## Quick Start
@@ -30,7 +29,7 @@ The `TemplateRef` value is the snapshot *name*; on create, that name resolves to
    # add OPENSANDBOX_API_KEY="..." if your server requires one
    ```
 
-2. **Authenticate the package index & install** (mints a gcloud token for you):
+2. **Install**
 
    ```bash
    make sync

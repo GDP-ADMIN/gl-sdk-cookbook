@@ -13,9 +13,8 @@ template (can take a few minutes), later runs skip straight to reuse.
 ## Prerequisites
 
 - An E2B API key ([dashboard](https://e2b.dev/dashboard)).
-- Access to the `gen-ai-internal` package index (a Google account with GDP Labs SDK access).
 
-> Needs `make`, `uv`, and `gcloud` (run `gcloud auth login` once). See the
+> Needs `make` and `uv`. See the
 > [GL Sandbox README](../../../README.md#installing-make) if `make` is missing.
 
 ## Quick Start
@@ -26,7 +25,7 @@ template (can take a few minutes), later runs skip straight to reuse.
    echo 'E2B_API_KEY="..."' > .env
    ```
 
-2. **Authenticate the package index & install** (mints a gcloud token for you):
+2. **Install**
 
    ```bash
    make sync

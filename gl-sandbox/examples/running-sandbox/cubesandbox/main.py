@@ -1,7 +1,8 @@
 """Run code in a CubeSandbox sandbox with gllm-tools.
 
-Creates a sandbox from an existing CubeSandbox template, executes a Python
-snippet and a shell command, then terminates the sandbox.
+Creates a sandbox from the default CubeSandbox template, or from CUBE_TEMPLATE
+when it is set, executes a Python snippet and a shell command, then terminates
+the sandbox.
 """
 
 import asyncio
@@ -34,11 +35,11 @@ async def run_command(sandbox: CubeSandbox) -> None:
 
 
 async def main() -> None:
-    """Create the sandbox from a template, run the examples, and always clean up."""
+    """Create the sandbox, run the examples, and always clean up."""
     sandbox = await CubeSandbox.create(
         api_key=os.environ["CUBE_API_KEY"],
         domain=os.environ["CUBE_DOMAIN"],
-        template=os.environ["CUBE_TEMPLATE"],
+        template=os.getenv("CUBE_TEMPLATE") or None,  # None uses the default template
     )
     try:
         await run_code(sandbox)
