@@ -1,10 +1,9 @@
 """Build a CubeSandbox warm-snapshot template, then create a sandbox from it.
 
-CubeSandbox has no default template. The builder converts an image into a
-template, installs packages, and saves a warm snapshot: a running sandbox with
-its memory, so every sandbox created from it starts with the Python kernel
-already running. The builder returns the snapshot *name*, which the create side
-resolves to the newest ready snapshot.
+The builder converts an image into a template, installs packages, and saves
+a warm snapshot: a running sandbox with its memory, so every sandbox created
+from it starts with the Python kernel already running. The builder returns the
+snapshot *name*, which the create side resolves to the newest ready snapshot.
 """
 
 import asyncio
@@ -16,6 +15,9 @@ from gllm_tools.code_interpreter.code_template import TemplateBuildStatus, Templ
 from gllm_tools.code_interpreter.code_template.cube_template_builder import CubeTemplateBuilder
 
 load_dotenv()
+
+# The maintained image, which carries envd. Set CUBE_IMAGE to build from your own.
+DEFAULT_IMAGE = "public.ecr.aws/c1z4u5m0/external/aip-agents-sandbox:base"
 
 CODE = """
 import pandas as pd
@@ -55,7 +57,7 @@ async def main() -> None:
     """Build the template, then create a sandbox from it."""
     api_key = os.environ["CUBE_API_KEY"]
     domain = os.environ["CUBE_DOMAIN"]
-    template = await build_template(api_key, domain, os.environ["CUBE_IMAGE"])
+    template = await build_template(api_key, domain, os.getenv("CUBE_IMAGE") or DEFAULT_IMAGE)
     await run_on_template(api_key, domain, template)
 
 

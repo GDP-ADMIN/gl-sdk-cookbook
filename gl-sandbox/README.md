@@ -28,37 +28,31 @@ backend.
 | ------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
 | [`running-sandbox/e2b`](./examples/running-sandbox/e2b)                 | Run code + shell commands on E2B                     | E2B API key                         |
 | [`running-sandbox/opensandbox`](./examples/running-sandbox/opensandbox) | Run code on a self-hosted OpenSandbox                | Running OpenSandbox server (Docker) |
-| [`running-sandbox/cubesandbox`](./examples/running-sandbox/cubesandbox) | Run code + shell commands on a self-hosted CubeSandbox | Running CubeSandbox server and a template |
+| [`running-sandbox/cubesandbox`](./examples/running-sandbox/cubesandbox) | Run code + shell commands on a self-hosted CubeSandbox | Running CubeSandbox server |
 | [`create-template/e2b`](./examples/create-template/e2b)                 | Build an E2B template, then create a sandbox from it | E2B API key                         |
 | [`create-template/opensandbox`](./examples/create-template/opensandbox) | Build an OpenSandbox snapshot, then create from it   | Running OpenSandbox server (Docker) |
-| [`create-template/cubesandbox`](./examples/create-template/cubesandbox) | Build a CubeSandbox warm snapshot, then create from it | Running CubeSandbox server and an image with envd |
+| [`create-template/cubesandbox`](./examples/create-template/cubesandbox) | Build a CubeSandbox warm snapshot, then create from it | Running CubeSandbox server |
 
 ## Shared setup
 
-Every example ships a `Makefile` with three targets — `uv-auth`, `sync`, and `run`. All examples
-resolve `gllm-tools` from the private **`gen-ai-internal`** uv index, which authenticates with a
-short-lived Google access token; `make sync` mints that token from `gcloud` for you.
+Every example ships a `Makefile` with two targets — `sync` and `run`. All examples install
+[`gllm-tools-binary`](https://pypi.org/project/gllm-tools-binary/) from PyPI, so no login is
+needed. It has wheels for Linux x86_64 (glibc 2.31 or newer), macOS 13 or newer on Apple Silicon,
+and Windows x64.
 
-You need [`uv`](https://docs.astral.sh/uv/), the [`gcloud` CLI](https://cloud.google.com/sdk/docs/install),
-and `make` (see [Installing make](#installing-make)). In each example directory:
+You need [`uv`](https://docs.astral.sh/uv/) and `make` (see [Installing make](#installing-make)).
+In each example directory:
 
-1. **Authenticate once** (a Google account with GDP Labs SDK access):
-
-   ```bash
-   gcloud auth login
-   ```
-2. **Set the backend values** — create a `.env` with the keys that example needs, e.g.:
+1. **Set the backend values** — create a `.env` with the keys that example needs, e.g.:
 
    ```bash
    echo 'E2B_API_KEY="..."' > .env          # E2B examples
    # or: echo 'OPENSANDBOX_DOMAIN="localhost:8080"' > .env   # OpenSandbox examples
    ```
-
-   The uv-index credentials are handled by `make sync` — they do **not** go in `.env`.
-3. **Install and run**
+2. **Install and run**
 
    ```bash
-   make sync   # mints a gcloud token, then `uv sync`
+   make sync   # `uv sync`
    make run    # `uv run main.py`
    ```
 
